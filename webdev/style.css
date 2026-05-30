@@ -1,0 +1,160 @@
+body {
+    background-color: #f4f9f9;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.layout-wrapper {
+    display: flex;
+}
+nav {
+    width: 250px;
+    background-color: #fff;
+    border-right: 1px solid #333;
+    min-height: calc(100vh - 61px);
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+nav ul a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+nav ul li a:hover {
+    background-color: black;
+    color: #fff;
+}
+main {
+    flex: 1;
+    padding: 20px;
+}
+/*inventory-page*/
+.inventory-page table {
+    width: 100%;
+}
+.inventory-page table td, th {
+    border: 1px solid #333;
+    padding: 10px;
+}
+.inventory-page th:nth-child(1), th:nth-child(2), th:nth-child(3), th:nth-child(4) {
+    width: 22.5%;
+}
+.action-bar {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-group, .add-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+input[type="search"], input[type="text"], input[type="number"] {
+    padding: 5px;
+    border: 1px solid #333;
+}
+button {
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+/* modals for edit and delete*/
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+.modal-overlay.active {
+    display: flex;
+}
+.modal-card {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
+    gap: 10px;
+}
+.modal-card #edit-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 350px;
+    align-items: center;
+    justify-content: center;
+}
+#edit-card button {
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+}
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+    gap: 10px;
+}
+.button-group button {
+    flex: 1;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+}
+
+#delete-card button {
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: 60px;
+}
+/*inventory-page end*/
+
+/*order-page*/
+.orders-page {
+    display: none;
+}
+
+.orders-page table {
+    width: 100%;
+}
+.orders-page table td, th {
+    border: 1px solid #333;
+    padding: 10px;
+}
+
+/*order-page end*/
+
+/*settings-page*/
+.settings-page {
+    display: none;
+}
+/*settings-page end*/
