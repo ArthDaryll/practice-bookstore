@@ -33,6 +33,7 @@ nav ul a {
 nav ul li a:hover {
     background-color: black;
     color: #fff;
+    cursor: pointer;
 }
 main {
     flex: 1;
@@ -58,19 +59,48 @@ main {
 .search-group, .add-group {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 input[type="search"], input[type="text"], input[type="number"] {
     padding: 5px;
     border: 1px solid #333;
+    border-radius: 5px;
 }
-button {
+.add-group button, .search-group button {
     padding: 5px 10px;
     background-color: #333;
     color: #fff;
     border: none;
     cursor: pointer;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
 }
+.add-group button:hover, .search-group button:hover {
+    background-color: #555;
+}
+.add-group button {
+    width: 150px;
+}
+.inventory-page table td:last-child {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+.inventory-page table td:last-child button {
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+}
+.inventory-page table td:last-child button:hover {
+    background-color: #555;
+}
+/*inventory-page end*/
 /* modals for edit and delete*/
 .modal-overlay {
     display: none;
@@ -92,7 +122,7 @@ button {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 15px;
     gap: 10px;
 }
@@ -104,6 +134,37 @@ button {
     align-items: center;
     justify-content: center;
 }
+#add-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 350px;
+    align-items: center;
+    justify-content: center;
+}
+#add-card h3 {
+    margin: 0;
+}
+#add-card input {
+    width: 200px;
+    height: 20px;
+}
+#edit-card h3 {
+    margin: 0;
+    color: #333;
+}
+#edit-card input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+#edit-card label {
+    display: block;
+    margin-bottom: 5px;
+}
 #edit-card button {
     width: 100px;
     height: 30px;
@@ -113,7 +174,7 @@ button {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 300px;
+    margin-top: 5px;
     gap: 10px;
 }
 .button-group button {
@@ -125,6 +186,9 @@ button {
     cursor: pointer;
     width: 100px;
     height: 50px;
+}
+.button-group button:hover {
+    background-color: #555;
 }
 
 #delete-card button {
@@ -149,6 +213,19 @@ button {
 .orders-page table td, th {
     border: 1px solid #333;
     padding: 10px;
+}
+.ship-btn {
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+}
+.ship-btn:hover {
+    background-color: #555;
 }
 
 /*order-page end*/

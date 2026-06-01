@@ -50,20 +50,25 @@ function renderBookRow(book) {
     deleteBook(book, newRow);
   });
 }
-let add = document.getElementById("addbook");
-add.addEventListener("click", function () {
-  event.preventDefault();
-  let title = document.getElementById("title").value;
-  let author = document.getElementById("author").value;
-  let isbn = document.getElementById("isbn").value;
-  let price = document.getElementById("price").value;
-  let newRow = document.createElement("tr");
-  let newBook = {
-    title: title,
-    author: author,
-    isbn: isbn,
-    price: price,
-  };
+let addModal = document.getElementById("add-modal");
+let openAddBtn = document.getElementById("open-add-modal");
+let cancelAddBtn = document.getElementById("cancel-add");
+let saveNewBtn = document.getElementById("save-add");
+
+openAddBtn.addEventListener("click", function () {
+  addModal.classList.add("active");
+});
+
+cancelAddBtn.addEventListener("click", function () {
+  addModal.classList.remove("active");
+});
+
+saveNewBtn.addEventListener("click", function () {
+  let title = document.getElementById("add-title").value;
+  let author = document.getElementById("add-author").value;
+  let isbn = document.getElementById("add-isbn").value;
+  let price = document.getElementById("add-price").value;
+
   if (
     title.trim() === "" ||
     author.trim() === "" ||
@@ -73,10 +78,16 @@ add.addEventListener("click", function () {
     alert("Please fill in all fields.");
     return;
   }
+
+  let newBook = { title, author, isbn, price };
   books.push(newBook);
   localStorage.setItem("books", JSON.stringify(books));
   renderBookRow(newBook);
-  alert("Book added!");
+  addModal.classList.remove("active");
+  title.value = "";
+  author.value = "";
+  isbn.value = "";
+  price.value = "";
 });
 
 function editBook(book, targetedRow) {
